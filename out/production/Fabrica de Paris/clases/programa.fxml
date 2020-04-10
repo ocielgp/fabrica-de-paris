@@ -4,31 +4,38 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem fx:id="altas" mnemonicParsing="false" text="Altas" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-   </top>
-   <right>
-      <ScrollBar orientation="VERTICAL" prefWidth="20.0" BorderPane.alignment="CENTER" />
-   </right>
+<BorderPane prefHeight="500.0" prefWidth="1000.0" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="clases.Programa">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <Menu mnemonicParsing="false" text="Clientes">
+                <MenuItem fx:id="clientesAltas" mnemonicParsing="false" onAction="#ventanaClientesAltas"
+                          text="Altas"/>
+                <MenuItem fx:id="clientesBajas" mnemonicParsing="false" text="Bajas"/>
+                <MenuItem fx:id="clientesCambios" mnemonicParsing="false" text="Cambios"/>
+                <MenuItem fx:id="clientesBuscar" mnemonicParsing="false" text="Buscar"/>
+                <MenuItem fx:id="clientesCatalogo" mnemonicParsing="false" text="Ver clientes"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Articulos">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Delete"/>
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Movimientos">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="About"/>
+                </items>
+            </Menu>
+            <Menu fx:id="versionPrograma" mnemonicParsing="false" text="Versión"/>
+        </MenuBar>
+    </top>
+    <right>
+        <ScrollBar orientation="VERTICAL" prefWidth="20.0" BorderPane.alignment="CENTER"/>
+    </right>
+    <center>
+        <AnchorPane fx:id="panelContenido" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER"/>
+    </center>
 </BorderPane>
